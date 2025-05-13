@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="home.css" />
+    <title>CLICK't</title>
+  </head>
+  <body>
+    
+    <div class="main-menu">
+      <!-- Video Background -->
+      <div class="video-background">
+        <video autoplay muted loop id="background-video">
+          <source src="img/background.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      
+      <!-- Content Overlay -->
+      <div class="overlap-wrapper">
+        <div class="overlap">
+          <div class="WELCOME-TO-CLICK-t">WELCOME TO<br />CLICK’t</div>
+          <p class="text-wrapper">
+            The ultimate destination for sharpening your aim and boosting your gaming performance! Whether you’re a
+            casual gamer looking to improve or a competitive player striving for the top, our aim trainer offers
+            tailored exercises and real-time feedback to help you hit your targets with precision. Dive into a variety
+            of challenges, track your progress, and become the sharpshooter you’ve always aspired to be. Ready to take
+            your skills to the next level? Let’s get started!
+          </p>
+          <img class="logo-removebg" src="img/logo__2_-removebg-preview 2.png" alt="Logo" />
+          <div class="text-wrapper-2">CLICK’t</div>
+          <div class="rectangle"></div>
+          <div class="text-wrapper-3">Sign Up</div>
+          <div class="rectangle-2"></div>
+          <img class="img" src="img/logo__2_-removebg-preview 3.png" alt="Logo" />
+          <div class="LEFT-BG"></div>
+
+          <!-- Grouped Rectangles and Texts -->
+          <div class="group-wrapper">
+            <!-- Group for Rectangle 21 and Text -->
+            <div class="group">
+              <button class="rectangle-button" onclick="handlePlay()">
+                <img class="rectangle-3" src="img/Rectangle 21.svg" alt="Rectangle 21" />
+                <div class="text-wrapper-5">PLAY</div>
+              </button>
+            </div>
+
+            <!-- Group for Rectangle 22 and Text -->
+            <div class="group">
+              <button class="rectangle-button" onclick="handleHistory()">
+                <img class="rectangle-4" src="img/Rectangle 25.svg" alt="Rectangle 22" />
+                <div class="text-wrapper-6">HISTORY</div>
+              </button>
+            </div>
+
+            <!-- Group for Rectangle 23 and Text -->
+            <div class="group">
+              <button class="rectangle-button" onclick="handleLeaderboard()">
+                <img class="rectangle-5" src="img/Rectangle 22.svg" alt="Rectangle 23" />
+                <div class="text-wrapper-7">LEADERBOARD</div>
+              </button>
+            </div>
+
+            <!-- Group for Rectangle 24 and Text -->
+            <div class="group">
+              <button class="rectangle-button" onclick="handleGuest()">
+                <img class="rectangle-6" src="img/Rectangle 24.svg" alt="Rectangle 24" />
+                <div class="text-wrapper-8">guest_03</div>
+              </button>
+            </div>
+
+            <!-- Group for Rectangle 25 and Text -->
+            <div class="group">
+              <button class="rectangle-button" onclick="handleTutorial()">
+                <img class="rectangle-7" src="img/Rectangle 22.svg" alt="Rectangle 25" />
+                <div class="text-wrapper-14">TUTORIAL</div>
+              </button>
+            </div>
+          </div>
+          <img class="play-polygon" src="https://c.animaapp.com/AJmQIcbH/img/play-polygon.svg" />
+          <div class="text-wrapper-10">Contact us:</div>
+          <div class="text-wrapper-11">Facebook</div>
+          <div class="text-wrapper-12">X</div>
+          <div class="text-wrapper-9">Gmail</div>
+          <div class="overlap-group-wrapper">
+          <img class="facebook" src="img/Facebook.svg" alt="Facebook" />
+          <img class="twitter" src="img/Twitter.svg" alt="Twitter" />
+          <img class="mail" src="img/Mail.svg" alt="Mail" />
+          <img class="clock" src="img/Clock.svg" alt="Clock" />
+          <img class="calendar" src="img/Calendar.svg" alt="Calendar" />
+          <img class="bar-chart" src="img/Bar chart-2.svg" alt="Bar Chart" />
+          <img class="account-circle" src="img/account_circle.svg" alt="Account Circle" />
+          <div class="text-wrapper-4">CLICK’t</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <a class="box1">
+      <button class="button" id="get-started-btn">Log In </button>
+      <button class="button" id="show-signup-btn">Sign Up </button>
+    </a>
+
+    <!-- Sign Up Form -->
+    <div id="signup-form-container" style="display: none;">
+      <button class="exit-btn" id="exit-btn">&times;</button>
+      <h3>Create an Account</h3>
+      <div id="feedback" class="feedback"></div>
+      <form id="signup-form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required placeholder="Enter username" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="Enter your email" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required placeholder="Create a password" />
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirm your password" />
+        </div>
+        <button type="button" id="signup-btn" class="submit-button">Sign Up</button>
+      </form>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      // Show Sign Up Form when "Sign Up / Log In" button is clicked
+      document.getElementById("show-signup-btn").addEventListener("click", function () {
+        document.getElementById("signup-form-container").style.display = "block"; // Show the form
+      });
+
+      // Close the Sign Up Form when exit button is clicked
+      document.getElementById("exit-btn").addEventListener("click", function () {
+        document.getElementById("signup-form-container").style.display = "none"; // Hide the form
+      });
+
+      // Handle the sign-up form submission
+      document.getElementById("signup-btn").addEventListener("click", function () {
+        const username = document.getElementById("username").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        const confirmPassword = document.getElementById("confirm-password").value;
+        const feedback = document.getElementById("feedback");
+
+        feedback.textContent = ""; // Clear previous feedback
+
+        if (!username || !email || !password || !confirmPassword) {
+          feedback.textContent = "Please fill in all fields.";
+          feedback.style.color = "red";
+          return;
+        }
+
+        if (password !== confirmPassword) {
+          feedback.textContent = "Passwords do not match!";
+          feedback.style.color = "red";
+          return;
+        }
+
+        feedback.textContent = `Account created for ${username} with email ${email}!`;
+        feedback.style.color = "green";
+
+        // Redirect to another page after successful signup
+        setTimeout(function () {
+          window.location.href = "home.html";
+        }, 2000);
+      });
+
+      // Redirect to home.html when "Get Started" button is clicked
+      document.getElementById("get-started-btn").addEventListener("click", function () {
+        window.location.href = "home.html";
+      });
+    </script>
+  </body>
+</html>
